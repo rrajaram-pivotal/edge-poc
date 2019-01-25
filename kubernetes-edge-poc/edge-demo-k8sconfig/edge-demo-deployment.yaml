@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-demo-deployment
+spec:
+  selector:
+    matchLabels:
+      app: edge-demo-app
+  replicas: 3 # tells deployment to run 3 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: edge-demo-app
+    spec:
+      containers:
+      - name: edge-demo-app
+        image: us.gcr.io/pa-rrajaram/edge-demo:1.0
+        ports:
+        - containerPort: 8080
+          name: server
+        - containerPort: 8081
+          name: management
+        env:
+        - name: cassandra.keyspace
+          value: demokeyspace
+        - name: cassandra.contactpoints
+          value: "10.11.244.150"
+        - name: cassandra.port
+          value: "9042"
+        - name: cassandra.schema-action
+          value: CREATE_IF_NOT_EXISTS
+        - name: CASSANDRA_CLUSTER_NAME
+          value: cassandra
