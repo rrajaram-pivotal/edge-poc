@@ -46,6 +46,8 @@ public class CassandraConfig extends AbstractCassandraConfiguration
 		  log.info("Overriden Auth Provider " + authProvider);
 		  return authProvider;
 	  }
+	  
+	
 
 	@Override
 	  protected String getKeyspaceName() {
@@ -68,7 +70,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration
 	  }
 
 
-	@Override
+	 @Override
 	  public String[] getEntityBasePackages() {
 		  log.info("Entity Base Packages -------------------------> " + entityBasePackages);
 		return new String[] {entityBasePackages};
@@ -76,5 +78,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration
 	  
 	  @Override
 	  protected boolean getMetricsEnabled() { return false; }
+	  
 
 }

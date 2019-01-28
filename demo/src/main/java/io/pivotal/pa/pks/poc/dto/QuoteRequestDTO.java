@@ -26,6 +26,7 @@ public class QuoteRequestDTO {
 	private String weightUnitOfMeasure;
 	private String classDesignation; 
 	private Date requestDate;
+	private Integer quotePrice;
 
 	
 

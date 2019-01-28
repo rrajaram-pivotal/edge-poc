@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: io.pivotal.pa.pks.poc.DemoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.069 s - in io.pivotal.pa.pks.poc.DemoApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 25.27 s <<< FAILURE! - in io.pivotal.pa.pks.poc.DemoApplicationTests
+contextLoads(io.pivotal.pa.pks.poc.DemoApplicationTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'quoteService': Unsatisfied dependency expressed through field 'quoteStream'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'io.pivotal.pa.pks.poc.service.QuoteStream' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'io.pivotal.pa.pks.poc.service.QuoteStream' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+

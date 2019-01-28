@@ -21,17 +21,17 @@ import lombok.extern.slf4j.Slf4j;
 public class QuotesController {
 	
 	@Autowired
-	private final QuoteService qoutesService;
+	private QuoteService qouteService;
 	
 	
-    public QuotesController(QuoteService qoutesService) {
+    /*public QuotesController(QuoteService qoutesService) {
         this.qoutesService = qoutesService;
-    }
+    }*/
  
     @PostMapping("/quoteRequest")
     public void quoteRequest(@RequestBody QuoteRequestDTO quoteRequestDTO) {
     	log.info("Entry into QuotesController.quoteRequest");
-    	qoutesService.quoteRequest(quoteRequestDTO);
+    	qouteService.recieveQuoteRequest(quoteRequestDTO);
     	log.info("Exit QuotesController.quoteRequest");
     	return;
     }
@@ -39,7 +39,7 @@ public class QuotesController {
     @GetMapping("/")
     public List<QuoteRequestDTO> listAll() {
     	log.info("Entry into QuotesController.listAll");
-    	List<QuoteRequestDTO> results = qoutesService.listAll();
+    	List<QuoteRequestDTO> results = qouteService.listAll();
     	log.info("Exit QuotesController.quoteRequest");
     	return results;
     }

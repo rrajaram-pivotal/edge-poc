@@ -12,8 +12,12 @@ import lombok.extern.slf4j.Slf4j;
 public interface QuoteService {
 	
 
-    public void quoteRequest(final QuoteRequestDTO quoteRequest); 
+    public void recieveQuoteRequest(final QuoteRequestDTO quoteRequest); 
     
     public List<QuoteRequestDTO> listAll(); 
+    
+    public void saveQuoteRequest(final QuoteRequestDTO quoteRequest); 
+    
+    
 
 }

@@ -39,6 +39,9 @@ public class QuoteRequest {
 	@Column
 	private String classDesignation;
 	
+	@Column
+	private Integer quotePrice;
+	
 	
 
 }

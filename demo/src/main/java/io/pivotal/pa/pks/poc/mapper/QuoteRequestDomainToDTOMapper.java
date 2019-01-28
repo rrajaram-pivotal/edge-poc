@@ -26,6 +26,7 @@ public class QuoteRequestDomainToDTOMapper implements Converter<QuoteRequest, Qu
 		  quoteRequestDTO.setWeightUnitOfMeasure(quoteRequest.getWeightUnitOfMeasure());
 		  quoteRequestDTO.setHandlingUnitType(quoteRequest.getHandlingUnitType());
 		  quoteRequestDTO.setHandlingUnitCount(quoteRequest.getHandlingUnitCount());
+		  quoteRequestDTO.setQuotePrice(quoteRequest.getQuotePrice());
 	        return quoteRequestDTO;
 	    }
 	    
