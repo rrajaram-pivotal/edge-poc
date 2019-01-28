@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: edge-demo-app
-        image: us.gcr.io/pa-rrajaram/edge-demo:1.0
+        image: us.gcr.io/pa-rrajaram/edge-demo:latest
         ports:
         - containerPort: 8080
           name: server
@@ -31,3 +31,5 @@ spec:
           value: CREATE_IF_NOT_EXISTS
         - name: CASSANDRA_CLUSTER_NAME
           value: cassandra
+        - name: spring.cloud.stream.kafka.binder.brokers
+          value: "10.11.243.148"
